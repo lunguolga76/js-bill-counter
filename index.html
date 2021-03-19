@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+   
+   <title>Document</title>
+</head>
+<body background="light">
+   <h4 class="title-text text-center text-uppercase">Calculate the $ bills</h4>
+   <div class="container">
+      <div class="row">
+         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center mb-2">
+            <form id="calculate" action="#">
+            <input type="text" id="myButton" class="btn border-danger" placeholder="Enter the amount"></input>
+            <button type="submit" click="totalCash()" class="btn btn-primary">Calculate</button>
+         </form>
+         <p id="demo"></p>
+      </div>
+   </div>
+   </div>
+   <div class="container-fluid w-50 h-50 border-primary">
+      <div class="row">
+         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+  <div class="card border-white bg-light text-center">
+   <img src="images/1.jpeg">
+   <p id="oneDollar"></p>
+</div>
+<div class="card border-white bg-light text-center">
+ <img src="images/5.jpeg">
+   <p id="fiveDollar"></p>
+   </div>
+   <div class="card border-white bg-light text-center">
+   <img src="images/10.jpeg">
+   <p id="tenDollar"></p>
+   </div>
+   </div>
+   <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+      <div class="card border-white bg-light text-center">
+   <img src="images/20.jpeg">
+   <p id="twentyDollar"></p>
+   </div>
+   <div class="card border-white bg-light text-center">
+   <img src="images/50.jpeg">
+   <p id="fiftyDollar"></p>
+</div>
+   <div class="card border-white bg-light text-center">
+  <img src="images/100.jpeg">
+   <p id="onehundredDollar"></p>
+   </div>
+         </div>
+      </div>    
+</div>
+</div>
+   <script>
+    function totalCash(x) {  
+if(x % 100 !== 0){
+   document.getElementById("onehundredDollar").innerHTML = `${Math.floor(x/100)} bills of 100`;
+   //console.log(Math.floor(x/100));
+   x=(Math.floor(x % 100));
+   document.getElementById("fiftyDollar").innerHTML = `${Math.floor(x/50)} bills of 50`;
+   //console.log(Math.floor(x/50));
+   x=(Math.floor(x % 50));
+   document.getElementById("twentyDollar").innerHTML = `${Math.floor(x/20)} bills of 20`;
+   //console.log(Math.floor(x/20));
+   x=(Math.floor(x % 20));
+   document.getElementById("tenDollar").innerHTML = `${Math.floor(x/10)} bills of 10`;
+  // console.log(Math.floor(x/10));
+   x=(Math.floor(x % 10));
+   document.getElementById("fiveDollar").innerHTML = `${Math.floor(x/5)} bills of 5`;
+   //console.log(Math.floor(x/5));
+   x=(Math.floor(x % 5));
+   document.getElementById("oneDollar").innerHTML = `${Math.floor(x/1)} bills of 1`;
+   //console.log(Math.floor(x/1));
+   x=(Math.floor(x % 1));
+   return x;    
+}
+} 
+   //console.log(totalCash())
+   document.getElementById("myButton").addEventListener("click",totalCash);
+     
+   </script>
+</body>
+</html>
