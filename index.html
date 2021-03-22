@@ -12,13 +12,13 @@
    <title>Document</title>
 </head>
 <body background="light">
-   <h4 class="title-text text-center text-uppercase">Calculate the $ bills</h4>
+   <h4 class="title-text text-center text-uppercase font-weight-bold">Calculate the $ bills</h4>
    <div class="container">
       <div class="row">
          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center mb-2">
-            <form id="calculate" action="#">
-            <input type="text" id="myButton" class="btn border-danger" placeholder="Enter the amount"></input>
-            <button type="submit" click="totalCash()" class="btn btn-primary">Calculate</button>
+            <form id="calculateT" action="#">
+            <input type="text" id="calculate" class="btn border-danger" placeholder="Enter the amount"></input>
+            <button type="submit" id="myButton" click="totalCash()" class="btn btn-primary">Calculate</button>
          </form>
          <p id="demo"></p>
       </div>
@@ -59,23 +59,24 @@
 </div>
    <script>
     function totalCash(x) {  
+       totalCash=parseInt(document.getElementById("calculate"));
 if(x % 100 !== 0){
-   document.getElementById("onehundredDollar").innerHTML = `${Math.floor(x/100)} bills of 100`;
+   document.getElementById("onehundredDollar").innerHTML = `${(Math.floor(x/100))} bills of 100`;
    //console.log(Math.floor(x/100));
    x=(Math.floor(x % 100));
-   document.getElementById("fiftyDollar").innerHTML = `${Math.floor(x/50)} bills of 50`;
+   document.getElementById("fiftyDollar").innerHTML = `${(Math.floor(x/50))} bills of 50`;
    //console.log(Math.floor(x/50));
    x=(Math.floor(x % 50));
-   document.getElementById("twentyDollar").innerHTML = `${Math.floor(x/20)} bills of 20`;
+   document.getElementById("twentyDollar").innerHTML = `${(Math.floor(x/20))} bills of 20`;
    //console.log(Math.floor(x/20));
    x=(Math.floor(x % 20));
-   document.getElementById("tenDollar").innerHTML = `${Math.floor(x/10)} bills of 10`;
+   document.getElementById("tenDollar").innerHTML = `${(Math.floor(x/10))} bills of 10`;
   // console.log(Math.floor(x/10));
    x=(Math.floor(x % 10));
-   document.getElementById("fiveDollar").innerHTML = `${Math.floor(x/5)} bills of 5`;
+   document.getElementById("fiveDollar").innerHTML = `${(Math.floor(x/5))} bills of 5`;
    //console.log(Math.floor(x/5));
    x=(Math.floor(x % 5));
-   document.getElementById("oneDollar").innerHTML = `${Math.floor(x/1)} bills of 1`;
+   document.getElementById("oneDollar").innerHTML = `${(Math.floor(x/1))} bills of 1`;
    //console.log(Math.floor(x/1));
    x=(Math.floor(x % 1));
    return x;    
