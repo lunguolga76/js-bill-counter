@@ -3,7 +3,7 @@ body{
    margin: 0;
    font-family: 'Inconsolata', monospace;
    box-sizing: border-box;
-   background: url("../images/background.jpg") no-repeat center center;
+   background: url("../images/background1.jpg") no-repeat center center;
     background-size: cover;
 }
 p{
@@ -17,5 +17,6 @@ p{
 }
 h4{
    font-weight: bold;
+   color: white;
    margin: auto;
 }
